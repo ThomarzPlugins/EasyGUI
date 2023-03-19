@@ -1,5 +1,6 @@
 package fr.thomarz.command;
 
+import fr.thomarz.EasyGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandMap;
@@ -17,8 +18,9 @@ public abstract class EasyCommand extends Command {
             bukkitCommandMap.setAccessible(true);
             CommandMap commandMap = (CommandMap) bukkitCommandMap.get(Bukkit.getServer());
             commandMap.register("lacraftia", this);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            e.printStackTrace();
+            EasyGUI.info("Loaded command: " + getName());
+        } catch (Exception e) {
+            EasyGUI.error(e.getMessage());
         }
     }
 }

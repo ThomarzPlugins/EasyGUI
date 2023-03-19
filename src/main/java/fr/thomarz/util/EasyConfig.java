@@ -34,6 +34,8 @@ public class EasyConfig {
     public boolean loadConfig() {
         FileConfiguration config = EasyGUI.getInstance().getConfig();
 
+        EasyGUI.info("Loading config values...");
+
         // Load
         String close = config.getString("names.close");
         String back = config.getString("names.back");
@@ -75,7 +77,7 @@ public class EasyConfig {
 
         for (Field field : fields) {
             try {
-                System.out.println(field.get(EasyData.class));
+                EasyGUI.info("Loading config value: " + field.getName() + " -> " + field.get(EasyData.close));
                 if (field.get(EasyData.class) == null) {
                     return false;
                 }
