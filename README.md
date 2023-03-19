@@ -16,7 +16,7 @@ public class ExampleGUI extends MenuGUI {
         super(
                 "MyTitle", // The title of the GUI
                 6 * 9, // The size of the GUI
-                null, // The previous GUI
+                previousMenu, // The previous GUI
                 0, // The current page of the gui
                 5 // The amount of pages
         );
