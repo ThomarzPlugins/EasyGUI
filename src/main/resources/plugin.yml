@@ -1,0 +1,5 @@
+name: EasyGUI
+version: 1.0.0
+author: Thomarz
+description: An easy gui createor plugin
+main: fr.thomarz.EasyGUI

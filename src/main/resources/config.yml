@@ -1,0 +1,20 @@
+# NOTE: Each fields must be populated
+#
+# Plugin: EasyGUI
+# Author: Thomarz
+#
+# Define the default items names
+names:
+  close: "&cClose"
+  back: "&cBack"
+  previous: "&6Previous Page"
+  next: "&6Next Page"
+
+# Define the default items positions
+# INFO: Close & Back item: If a gui has been open from another gui, the
+# back item will be display, otherwise, it displays the close item
+positions:
+  close: 8
+  back: 8
+  previous: 3
+  next: 5
