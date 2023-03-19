@@ -1,26 +1,24 @@
 package fr.thomarz.command;
 
-import fr.thomarz.EasyGUI;
-import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandMap;
+import fr.thomarz.command.creator.EasyGUICommand;
+import fr.thomarz.command.creator.IEasyCommand;
+import org.bukkit.command.CommandSender;
 
-import java.lang.reflect.Field;
+public class EasyCommand extends EasyGUICommand {
 
-public abstract class EasyCommand extends Command {
-    public EasyCommand(String name) {
-        super(name);
+    public EasyCommand() {
+        super("easy");
+
+        addCommandPart("gui", "Open the main gui menu", new IEasyCommand() {
+            @Override
+            public void execute(CommandSender sender, String[] args) {
+
+            }
+        });
     }
 
-    public void register() {
-        try {
-            Field bukkitCommandMap = Bukkit.getServer().getClass().getDeclaredField("commandMap");
-            bukkitCommandMap.setAccessible(true);
-            CommandMap commandMap = (CommandMap) bukkitCommandMap.get(Bukkit.getServer());
-            commandMap.register("lacraftia", this);
-            EasyGUI.info("Loaded command: " + getName());
-        } catch (Exception e) {
-            EasyGUI.error(e.getMessage());
-        }
+    @Override
+    public void onExecute(CommandSender sender, String label, String[] args) {
+
     }
 }
