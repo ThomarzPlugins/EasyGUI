@@ -9,6 +9,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class EasyGUI extends JavaPlugin {
 
+    public static final String PREFIX = "[EasyGUI]";
+
     @Getter
     private static EasyGUI instance;
 
@@ -48,13 +50,13 @@ public class EasyGUI extends JavaPlugin {
     }
 
     public static void info(String message) {
-        Bukkit.getLogger().info("[EasyGUI] " + message);
+        Bukkit.getLogger().info(PREFIX + " " + message);
     }
     public static void warning(String message) {
-        Bukkit.getLogger().warning("[EasyGUI] " + message);
+        Bukkit.getLogger().warning(PREFIX + " " + message);
     }
     public static void error(String message) {
-        Bukkit.getLogger().severe("[EasyGUI] " + message);
+        Bukkit.getLogger().severe(PREFIX + " " + message);
     }
 
 }
