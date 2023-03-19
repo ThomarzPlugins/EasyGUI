@@ -1,6 +1,6 @@
 package fr.thomarz;
 
-import fr.thomarz.command.TestCommand;
+import fr.thomarz.command.EasyCommand;
 import fr.thomarz.util.EasyConfig;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,7 +41,7 @@ public class EasyGUI extends JavaPlugin {
         // Listeners
 
         // Commands
-        new TestCommand().register();
+        new EasyCommand().register();
     }
 
     @Override
